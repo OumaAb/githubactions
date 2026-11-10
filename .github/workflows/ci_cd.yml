@@ -64,7 +64,7 @@ jobs:
     # "needs" crée une dépendance : build attend test
     needs: test
     runs-on: self-hosted
-
+#just to test'''''
     steps:
       # 1. Récupère le code (chaque job a son propre runner vierge)
       - name: Récupérer le code
