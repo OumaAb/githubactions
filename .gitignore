@@ -1,0 +1,12 @@
+# GitHub Actions self-hosted runner
+actions-runner/
+
+# Python generated files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
+actions-runner/
