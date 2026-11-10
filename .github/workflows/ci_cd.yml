@@ -64,12 +64,19 @@ jobs:
     # "needs" crée une dépendance : build attend test
     needs: test
     runs-on: self-hosted
+    env:
+      RUNNER_TOOL_CACHE: ${{ runner.temp }}/hostedtoolcache
+
 #just to test'''''
     steps:
       # 1. Récupère le code (chaque job a son propre runner vierge)
       - name: Récupérer le code
         uses: actions/checkout@v4
-
+        
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       # 2. Construit l'image Docker
       # Le tag utilise le SHA du commit pour identifier la version
       - name: Construire l'image Docker
