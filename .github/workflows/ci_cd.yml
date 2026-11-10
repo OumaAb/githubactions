@@ -2,7 +2,7 @@
 # Nom du workflow (affiché dans l'onglet "Actions" de GitHub)
 # ============================================================
 name: CI/CD Pipeline
-
+#hellooo
 # ============================================================
 # DÉCLENCHEURS (Events)
 # Le workflow se lance quand :
@@ -64,15 +64,13 @@ jobs:
     # "needs" crée une dépendance : build attend test
     needs: test
     runs-on: self-hosted
-    env:
-      RUNNER_TOOL_CACHE: ${{ runner.temp }}/hostedtoolcache
-
+    
 #just to test'''''
     steps:
       # 1. Récupère le code (chaque job a son propre runner vierge)
       - name: Récupérer le code
         uses: actions/checkout@v4
-        
+
       - name: Installer Python
         uses: actions/setup-python@v5
         with:
